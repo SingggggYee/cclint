@@ -6,6 +6,11 @@ Lint your Claude Code setup. Finds token waste in your CLAUDE.md, hooks, skills,
 
 ## Example Output
 
+![cclint output](docs/assets/screenshot.png)
+
+<details>
+<summary>Text version</summary>
+
 ```
   cclint — Claude Code Config Linter
   Find what's wasting tokens in your config.
@@ -21,6 +26,7 @@ Lint your Claude Code setup. Finds token waste in your CLAUDE.md, hooks, skills,
   [INFO] settings.json skipDangerousModePermissionPrompt is enabled
          fix: This skips safety confirmations. Make sure you understand the risks.
 ```
+</details>
 
 ## Install
 
