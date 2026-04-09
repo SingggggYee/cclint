@@ -16,7 +16,7 @@ Lint your Claude Code setup. Finds token waste in your CLAUDE.md, hooks, skills,
 <summary>Text version</summary>
 
 ```
-  cclint — Claude Code Config Linter
+  cclint - Claude Code Config Linter
   Find what's wasting tokens in your config.
 
   Config Health Score: 90/100
@@ -101,8 +101,8 @@ cclint --json
 ## Works with ccwhy
 
 Use together for full usage optimization:
-- [ccwhy](https://github.com/SingggggYee/ccwhy) — tells you where tokens went (past usage)
-- **cclint** — tells you what to fix in your config (prevent future waste)
+- [ccwhy](https://github.com/SingggggYee/ccwhy) - tells you where tokens went (past usage)
+- **cclint** - tells you what to fix in your config (prevent future waste)
 
 ## FAQ
 
@@ -124,7 +124,7 @@ Install via `cargo install cclint` if you have Rust installed. Alternatively, cl
 
 ### What's a good health score for CLAUDE.md?
 
-A score of 80-100 means your config is in good shape with only minor optimizations possible. Below 50 means significant token waste — you should fix the reported issues immediately.
+A score of 80-100 means your config is in good shape with only minor optimizations possible. Below 50 means significant token waste - you should fix the reported issues immediately.
 
 ## License
 
