@@ -1,6 +1,10 @@
 # cclint
 
-> ccwhy tells you where tokens went. cclint tells you what to fix in your config.
+[![GitHub stars](https://img.shields.io/github/stars/SingggggYee/cclint)](https://github.com/SingggggYee/cclint/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Rust](https://img.shields.io/badge/built%20with-Rust-orange.svg)](https://www.rust-lang.org/)
+
+> claude-usage-analyzer tells you where tokens went. cclint tells you what to fix in your config.
 
 Lint your Claude Code setup. Finds token waste in your CLAUDE.md, hooks, skills, and commands. Gives you a health score and actionable fixes.
 
@@ -99,6 +103,28 @@ cclint --json
 Use together for full usage optimization:
 - [ccwhy](https://github.com/SingggggYee/ccwhy) — tells you where tokens went (past usage)
 - **cclint** — tells you what to fix in your config (prevent future waste)
+
+## FAQ
+
+### How do I optimize my CLAUDE.md file?
+
+Run `cclint` in your project directory. It analyzes your CLAUDE.md for vague rules, redundant instructions, and oversized content, then gives specific fixes to reduce token waste.
+
+### What does cclint check?
+
+cclint checks four areas: CLAUDE.md (size, vague rules, contradictions), settings.json (hooks, permissions), skills (count, missing SKILL.md), and commands (count, oversized files). Each issue gets a severity level with a concrete fix.
+
+### Does cclint work with other AI coding agents?
+
+cclint is designed specifically for Claude Code configurations. It checks CLAUDE.md, Claude Code hooks, skills, and commands. Other AI coding agents use different config formats and are not supported.
+
+### How do I install cclint?
+
+Install via `cargo install cclint` if you have Rust installed. Alternatively, clone the repo and build from source with `cargo build --release`.
+
+### What's a good health score for CLAUDE.md?
+
+A score of 80-100 means your config is in good shape with only minor optimizations possible. Below 50 means significant token waste — you should fix the reported issues immediately.
 
 ## License
 
