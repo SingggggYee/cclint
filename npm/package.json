@@ -1,5 +1,5 @@
 {
-  "name": "cclint",
+  "name": "cclint-cli",
   "version": "0.1.0",
   "description": "Token-cost linter for Claude Code configs: audits CLAUDE.md, settings.json, skills, and commands, then suggests fixes",
   "keywords": [

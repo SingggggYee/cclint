@@ -3,9 +3,11 @@
 Token-cost linter for Claude Code configs. Audits your `CLAUDE.md`, `settings.json`, skills, and commands, finds token waste, and suggests concrete fixes with a 0-100 health score.
 
 ```bash
-npm install -g cclint
+npm install -g cclint-cli
 cclint
 ```
+
+(The npm package is named `cclint-cli` because npm reserves names too similar to existing packages; the installed command is still `cclint`.)
 
 This package downloads the prebuilt Rust binary for your platform (macOS or Linux, arm64/x64) from [GitHub releases](https://github.com/SingggggYee/cclint/releases). No Rust toolchain needed.
 
