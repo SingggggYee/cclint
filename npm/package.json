@@ -1,0 +1,46 @@
+{
+  "name": "cclint",
+  "version": "0.1.0",
+  "description": "Token-cost linter for Claude Code configs: audits CLAUDE.md, settings.json, skills, and commands, then suggests fixes",
+  "keywords": [
+    "claude-code",
+    "claude",
+    "linter",
+    "token",
+    "cost",
+    "cli",
+    "CLAUDE.md",
+    "agent",
+    "anthropic",
+    "developer-tools"
+  ],
+  "homepage": "https://github.com/SingggggYee/cclint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SingggggYee/cclint.git"
+  },
+  "license": "MIT",
+  "author": "SingggggYee",
+  "bin": {
+    "cclint": "bin/cclint.js"
+  },
+  "files": [
+    "bin/",
+    "install.js",
+    "README.md"
+  ],
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
