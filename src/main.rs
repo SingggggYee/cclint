@@ -1,7 +1,6 @@
 use clap::Parser;
 use colored::Colorize;
-use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 mod checks;
 
@@ -95,33 +94,33 @@ fn main() {
     }
 
     // Check global CLAUDE.md
-    if cli.global {
-        if let Some(ref gdir) = global_dir {
-            let global_claude_md = gdir.join("CLAUDE.md");
-            if global_claude_md.exists() {
-                issues.extend(checks::check_claude_md(
-                    &global_claude_md,
-                    "~/.claude/CLAUDE.md",
-                ));
-            }
+    if cli.global
+        && let Some(ref gdir) = global_dir
+    {
+        let global_claude_md = gdir.join("CLAUDE.md");
+        if global_claude_md.exists() {
+            issues.extend(checks::check_claude_md(
+                &global_claude_md,
+                "~/.claude/CLAUDE.md",
+            ));
+        }
 
-            // Check settings.json
-            let settings = gdir.join("settings.json");
-            if settings.exists() {
-                issues.extend(checks::check_settings(&settings));
-            }
+        // Check settings.json
+        let settings = gdir.join("settings.json");
+        if settings.exists() {
+            issues.extend(checks::check_settings(&settings));
+        }
 
-            // Check skills
-            let skills_dir = gdir.join("skills");
-            if skills_dir.exists() {
-                issues.extend(checks::check_skills(&skills_dir));
-            }
+        // Check skills
+        let skills_dir = gdir.join("skills");
+        if skills_dir.exists() {
+            issues.extend(checks::check_skills(&skills_dir));
+        }
 
-            // Check commands
-            let commands_dir = gdir.join("commands");
-            if commands_dir.exists() {
-                issues.extend(checks::check_commands(&commands_dir));
-            }
+        // Check commands
+        let commands_dir = gdir.join("commands");
+        if commands_dir.exists() {
+            issues.extend(checks::check_commands(&commands_dir));
         }
     }
 
@@ -135,9 +134,21 @@ fn main() {
     }
 
     // Calculate score
-    let errors: Vec<_> = issues.iter().filter(|i| i.severity == "error").cloned().collect();
-    let warnings: Vec<_> = issues.iter().filter(|i| i.severity == "warning").cloned().collect();
-    let infos: Vec<_> = issues.iter().filter(|i| i.severity == "info").cloned().collect();
+    let errors: Vec<_> = issues
+        .iter()
+        .filter(|i| i.severity == "error")
+        .cloned()
+        .collect();
+    let warnings: Vec<_> = issues
+        .iter()
+        .filter(|i| i.severity == "warning")
+        .cloned()
+        .collect();
+    let infos: Vec<_> = issues
+        .iter()
+        .filter(|i| i.severity == "info")
+        .cloned()
+        .collect();
 
     let score = calculate_score(&errors, &warnings);
 
